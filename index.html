@@ -85,7 +85,19 @@ p {
 <button class="btn third"><a style="color: #000;text-decoration:none" href="/feed" class="twitter-follow-button" data-show-count="false" data-size="large">Feed</a></button>
 <button class="btn third"><a style="color: #000;text-decoration:none" href="https://minnit.chat/chibi?embed&nickname=" class="twitter-follow-button" data-show-count="false" data-size="large">Chat</a></button>
 <p>interactive!</p>
-
+	<div id="sigCommentsBlock"></div>
+	<a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
+	<script type="text/javascript">
+		(function(){
+			var host_id = '4513';
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = '//sigcomments.com/chat/?host_id='+host_id;
+			var ss = document.getElementsByTagName('script')[0]; 
+			ss.parentNode.insertBefore(script, ss);
+		})();
+	</script>
 <!-- partial -->
   
   <script type="text/javascript">
