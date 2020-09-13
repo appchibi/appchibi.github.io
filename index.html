@@ -78,13 +78,7 @@ p {
   
 </head>
 <body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-<img src="" class="sb-img js-img" data-hastag="chibiworld"/>
-<p>YOU</p>
-<!-- partial:index.partial.html -->
-<button class="btn third"><a style="color: #000;text-decoration:none" href="/feed" class="twitter-follow-button" data-show-count="false" data-size="large">Feed</a></button>
-<button class="btn third"><a style="color: #000;text-decoration:none" href="https://minnit.chat/chibi?embed&nickname=" class="twitter-follow-button" data-show-count="false" data-size="large">Chat</a></button>
-<p>interactive!</p>
+
 	<div id="sigCommentsBlock"></div>
 	<a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
 	<script type="text/javascript">
@@ -99,47 +93,6 @@ p {
 		})();
 	</script>
 <!-- partial -->
-  
-  <script type="text/javascript">
-$(document).ready(function(){
-  var photos,
-      i = 0,
-      id = null,
-      newPhotos;
-  
-  ajaxCall();
-  
-  function ajaxCall() {
-    var hastag = $(".js-img").data("hastag")
-    
-    $.ajax({
-      url: "https://www.instagram.com/explore/tags/"+hastag+"/?__a=1",
-      dataType: "json",
-      success: function(data) {
-        photos = data.graphql.hashtag.edge_hashtag_to_media.edges;
-        setTimeout(start, 500);
-      },
-      error: function() {
-        setTimeout(ajaxCall, 60000);
-      }
-    });
-  }
-  function start() {
-    i = 0;
-    $(".js-img").attr("src", photos[i].node.display_url);
-    i++;
-    id = setInterval(function(){
-      $(".js-img").attr("src", photos[i].node.display_url);
-      i++;
-      if(i === photos.length) {
-        i = 0;
-        ajaxCall();
-        clearInterval(id);
-      }
-    }, 1000);
-  }
-});
-</script>
-  
+
 </body>
 </html>
